@@ -1,25 +1,47 @@
 package com.tprf.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class User {
 	
-	private  int id;
+	@Id 
+	@GeneratedValue
+	private  Long  id;
+	
+	@Column(nullable = false)
 	private  String firstName;
+	
+	@Column(nullable = false)
 	private  String lastName;
+	
+	@Column
 	private  String email;
 	
 	
 	public User() {
 		super();
 	}
+	
 
-
-	public User(int id, String firstName, String lastName, String email) {
+	public User(Long id, String firstName, String lastName, String email) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 	}
+	
+	public User(String firstName, String lastName, String email) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
+	
 	
 	
 	public long getId() {
