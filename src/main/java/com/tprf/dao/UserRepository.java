@@ -9,7 +9,7 @@ import com.tprf.model.User;
 
 public interface UserRepository extends CrudRepository<User, Long> {
 	
-	User findByFirstName(String firstName);
+	User findById(Long userId);
 
 	List<User> findByLastName(String lastName);
 }
