@@ -1,4 +1,4 @@
-package com.tprf.dao;
+package com.tprf.repository;
 
 
 import java.util.List;

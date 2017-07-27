@@ -3,8 +3,8 @@ package com.tprf.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tprf.dao.UserRepository;
 import com.tprf.model.User;
+import com.tprf.repository.UserRepository;
 
 /**
  * Service permettant la gestion des Utilisateurs
@@ -23,7 +23,8 @@ public class UserServices {
 	 */
 	public void createUser(User user) {
 		System.out.println(user.getFirstName() + user.getLastName() + user.getEmail());
-		userRepository.save(user);
+		user= userRepository.save(user);
+		System.out.println(user.getId());
 	}
 	
 	/**
