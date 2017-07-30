@@ -21,10 +21,8 @@ public class UserServices {
 	 * Création d'un utilisateur
 	 * @param user
 	 */
-	public void createUser(User user) {
-		System.out.println(user.getFirstName() + user.getLastName() + user.getEmail());
-		user= userRepository.save(user);
-		System.out.println(user.getId());
+	public User createUser(User user) {
+		 return user = userRepository.save(user);
 	}
 	
 	/**

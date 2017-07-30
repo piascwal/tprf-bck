@@ -13,7 +13,7 @@ import com.tprf.model.User;
 import com.tprf.services.UserServices;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping(value="/users")
 public class UserController {
 	
@@ -28,8 +28,9 @@ public class UserController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public void createUser(@RequestBody User user)  {
-		userService.createUser(user);
+	public User createUser(@RequestBody User user)  {
+		System.out.println(user.getId());
+		return userService.createUser(user);
 	}
 	
 	@RequestMapping(value="/{userId}", method=RequestMethod.DELETE)
