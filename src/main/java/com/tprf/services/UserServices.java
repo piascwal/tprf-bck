@@ -1,5 +1,7 @@
 package com.tprf.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,6 +42,14 @@ public class UserServices {
 	 */
 	public void deleteUser(Long userId) {
 		userRepository.delete(userId);
+	}
+	
+	/**
+	 * Récupération de tous les utilisateurs
+	 * @return
+	 */
+	public Iterable<User> getUser() {
+		return userRepository.findAll();
 	}
 
 }
