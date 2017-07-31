@@ -24,7 +24,7 @@ public class UserServices {
 	 * @param user
 	 */
 	public User createUser(User user) {
-		 return user = userRepository.save(user);
+		 return userRepository.save(user);
 	}
 	
 	/**
@@ -48,7 +48,7 @@ public class UserServices {
 	 * Récupération de tous les utilisateurs
 	 * @return
 	 */
-	public Iterable<User> getUser() {
+	public Iterable<User> getUsers() {
 		return userRepository.findAll();
 	}
 

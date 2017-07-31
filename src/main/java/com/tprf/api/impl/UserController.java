@@ -31,18 +31,18 @@ public class UserController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public User createUser(@RequestBody User user)  {
+		System.out.println(user.getId());
 		return userService.createUser(user);
 	}
 	
 	@RequestMapping(value="/{userId}", method=RequestMethod.DELETE)
 	public void deleteUser(@PathVariable Long userId)  {
-		System.out.println(userId);
 		userService.deleteUser(userId);
 	}
 	
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<User> getAllUser()  {
-		return (List<User>) userService.getUser();
+		return (List<User>) userService.getUsers();
 		
 	}
 }
