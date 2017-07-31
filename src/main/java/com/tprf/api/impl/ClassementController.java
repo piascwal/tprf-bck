@@ -33,7 +33,7 @@ public class ClassementController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public Classement createClassement(@RequestBody Classement classement)  {
-		System.out.println(classement.getTitre());
+		System.out.println(classement.getTitre() + classement.getCreateur().getLastName());
 		return classementService.createClassement(classement);
 	}
 	

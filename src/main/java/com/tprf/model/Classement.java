@@ -2,10 +2,12 @@ package com.tprf.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 
 @Entity
@@ -20,6 +22,9 @@ public class Classement {
 	Date dateDebut;
 	
 	Date dateFin;
+	
+	 @OneToOne(cascade=CascadeType.PERSIST)
+	User createur;
 	
 
 	public Classement() {
@@ -57,6 +62,16 @@ public class Classement {
 	public void setDateFin(Date dateFin) {
 		this.dateFin = dateFin;
 	}
+
+	public User getCreateur() {
+		return createur;
+	}
+
+	public void setCreateur(User createur) {
+		this.createur = createur;
+	}
+	
+	
 	
 	
 
